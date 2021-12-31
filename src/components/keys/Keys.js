@@ -1,15 +1,20 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import "./Keys.css";
 import Container from 'react-bootstrap/Container';
+import { KeyContext } from '../../context/KeyContext';
 
-const pushKey = (e) => {
 
-    let key = e.target.innerText;
-    console.log(key);
-}
+
 
 
 function Keys() {
+    const { addKey } = useContext(KeyContext);    
+    const pushKey = (e) => {
+
+        let key = e.target.innerText;
+        addKey(key);
+    }
+
     return (
        <Container className='keyboard' style={{ paddingTop: '30px' }}>
            <ul className="small-keys" onClick={(e) => pushKey(e)}>

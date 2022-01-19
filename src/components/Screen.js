@@ -1,4 +1,4 @@
-import React,{useContext,useEffect} from 'react'
+import React,{useContext,useEffect,useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { KeyContext } from '../context/KeyContext';
@@ -7,15 +7,30 @@ import { KeyContext } from '../context/KeyContext';
 
 
 function Screen() {
-
-  const { keys } = useContext(KeyContext);    
+  const { addKey } = useContext(KeyContext); 
+     
+  const [Screen, setScreen] = useState("");
   useEffect(() => {
-    document.getElementById('screen').innerText = keys;
+    console.log("me ejecute Screen")
+  
+    document.getElementById('screen').textContent = Screen;
     
-  }, [keys])
+  }, [Screen])
+const keyDown = (e) => {
+  //let key = e.key;
+  console.log(e.key)
+  if(e.key==="Backspace"){
+    setScreen(Screen.slice(0, -1));
+  }else{
+  addKey(document.getElementById('screen').value)  //addKey(key);
+ // document.getElementById('screen').textContent = keys;
+ // setScreen(keys)
+  }
+}
+
     return (
-<FloatingLabel controlId="floatingTextarea"  className="mb-2" style={{ paddingTop: '100px'}}>
-    <Form.Control id='screen' as="textarea" placeholder="Leave a comment here"  style={{ height:"150px" }}  />
+<FloatingLabel  className="mb-2" style={{ paddingTop: '100px'}}>
+    <Form.Control onKeyDown={(e)=> keyDown(e)} id='screen' as="textarea" placeholder="Leave a comment here"  style={{ height:"150px" }} autoFocus />
   </FloatingLabel>
     )
 }

@@ -6,7 +6,7 @@ export const KeyProvider = ({defaultValue=[],children})=>{
     const [keys,setKeys] = useState(defaultValue);
     const addKey = (key)=>{
 
-        setKeys([keys+key]);
+        setKeys([key]);
        
     }
 

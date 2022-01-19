@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext,useEffect} from 'react'
 import "./Keys.css";
 import Container from 'react-bootstrap/Container';
 import { KeyContext } from '../../context/KeyContext';
@@ -8,11 +8,22 @@ import { KeyContext } from '../../context/KeyContext';
 
 
 function Keys() {
-    const { addKey } = useContext(KeyContext);    
+    const { addKey } = useContext(KeyContext); 
+    const { keys } = useContext(KeyContext);  
+  
+
+    useEffect(() => {
+        document.getElementById('screen').value = keys;
+        
+      }, [keys])
+    
     const pushKey = (e) => {
 
         let key = e.target.innerText;
-        addKey(key);
+        console.log("aprete teclado virtual")
+        addKey(document.getElementById('screen').value+key);
+        console.log(document.getElementById('screen').value+key);
+        
     }
 
     return (
@@ -75,7 +86,7 @@ function Keys() {
            </ul>
            
            <ul className='keys' onClick={(e) => pushKey(e)}>
-           <li className='space'>{' '}</li>{' '}
+           <li className='space'>{'/n '}</li>{' '}
            
            </ul>        
        </Container>

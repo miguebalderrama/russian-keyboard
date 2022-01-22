@@ -11,7 +11,7 @@ function Keys() {
     
     const { addKey } = useContext(KeyContext); 
     const { keys } = useContext(KeyContext); 
-    const [bloqMay, setBloqMay] = useState(false);
+    const [bloqMay, setBloqMay] = useState(true);
     
    
     
@@ -119,7 +119,7 @@ function Keys() {
            <li>{keyImpr[32]}</li>{' '}
            </ul>
            
-           <ul className='keysspace' onClick={(e) => pushKey(e)}>
+           <ul className='keys' onClick={(e) => pushKey(e)}>
            <li className='space'>&nbsp;</li>{' '}
            
            </ul>        

@@ -61,3 +61,7 @@ ul.keys{
     box-shadow: 0px 4px 10px -8px black;  
     transform: translate(0px, 3px);
 }
+
+.keyboard .keysspace ul li{
+    list-style:none;
+}

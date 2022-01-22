@@ -18,7 +18,8 @@ function Screen() {
   }, [Screen])
 const keyDown = (e) => {
   //let key = e.key;
-  console.log(e.key)
+  console.log(toString(e.key))
+  
   if(e.key==="Backspace"){
     setScreen(Screen.slice(0, -1));
   }else{

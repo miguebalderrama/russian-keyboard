@@ -7,7 +7,8 @@ import { KeyProvider } from './context/KeyContext';
 function App() {
   return (
     <div className="App">
-      <h1>Russian keyboard</h1>
+      <h1>Teclado ruso</h1>
+      <p className="SubLine"></p>
       <KeyProvider>
       <KeyContainer/>
       </KeyProvider>

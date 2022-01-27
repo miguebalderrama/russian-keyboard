@@ -3,6 +3,7 @@ ul.keys{
     padding: 0;
 }
 .keyboard .keys li{
+    color: #5f6368;
     text-decoration: none;
     margin:4px;
     border: 1.2px solid #E0E0E0;
@@ -21,6 +22,7 @@ ul.keys{
     
 }
 .keyboard .small-keys li{
+    color: #5f6368;
     text-decoration: none;
     margin:4px;
     border: 1.2px solid #E0E0E0;
@@ -41,7 +43,7 @@ ul.keys{
 }
 .keyboard .keys li.bloqMayus{
     width: 115px;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .keyboard .keys li.space{

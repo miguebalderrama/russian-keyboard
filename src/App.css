@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  
+}
+.App h1{
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-align: left;
+  margin-left: 100px;
+  margin-bottom: 1px;
+
+  color: #0018a6;
 }
 
 .App-logo {
@@ -26,6 +40,14 @@
 
 .App-link {
   color: #61dafb;
+}
+.App .SubLine{
+  font-size: 1.5rem;
+  width: 35px;
+  height: 4px;
+  font-weight: 600;
+  border-top: solid 4px #7a15e5;
+  margin-left: 100px;
 }
 
 @keyframes App-logo-spin {

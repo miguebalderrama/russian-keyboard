@@ -2,6 +2,8 @@ import React,{useContext,useEffect,useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { KeyContext } from '../context/KeyContext';
+import "./Screen.css";
+
 
 
 

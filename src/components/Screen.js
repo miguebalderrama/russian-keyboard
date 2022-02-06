@@ -32,7 +32,7 @@ const keyDown = (e) => {
 }
 
     return (
-<FloatingLabel  className="mb-2" style={{ paddingTop: '100px'}}>
+<FloatingLabel  className="mb-2" style={{ paddingTop: '50px'}}>
     <Form.Control onKeyDown={(e)=> keyDown(e)} id='screen' as="textarea" placeholder="Leave a comment here"  style={{ height:"150px" }} autoFocus />
   </FloatingLabel>
     )

@@ -16,7 +16,8 @@ function Footer() {
           rel="noopener noreferrer"
         >
           ReactJs
-        </a>
+        </a> 
+        by Epruso 2022.
       </p>{" "}
     </div>
   );

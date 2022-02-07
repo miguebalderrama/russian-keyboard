@@ -17,7 +17,7 @@ function Footer() {
         >
           ReactJs
         </a> 
-        by Epruso 2022.
+        {" "} by Epruso 2022.
       </p>{" "}
     </div>
   );

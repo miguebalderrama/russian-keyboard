@@ -1,13 +1,14 @@
+
 ul.keys{
     margin: 0;
     padding: 0;
 }
 .keyboard .keys li{
-    color: #5f6368;
+    color: #9a9fa5;
     text-decoration: none;
     margin:4px;
     border: 1.2px solid #E0E0E0;
-    background-color: #fff;
+    background-color: #1A1C1E;
     display: inline-block;
     padding: 10px;
     width: 48px;
@@ -22,11 +23,11 @@ ul.keys{
     
 }
 .keyboard .small-keys li{
-    color: #5f6368;
+    color: #9a9fa5;
     text-decoration: none;
     margin:4px;
     border: 1.2px solid #E0E0E0;
-    background-color: #fff;
+    background-color: #1A1C1E;
     display: inline-block;
     padding: 10px;
     width: 38px !important;

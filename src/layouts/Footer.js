@@ -9,7 +9,7 @@ function Footer() {
         <span role="img" aria-label="amor">
           💖
         </span>
-        y{" "}
+        &{" "}
         <a
           href="https://reactjs.org/"
           target="_blank"

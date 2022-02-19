@@ -1,7 +1,10 @@
 import React from "react";
 
 function Footer() {
+  const currentTime = new Date();
+  const year = currentTime.getFullYear();
   return (
+   
     <div style={{ fontSize : '13px' ,paddingTop: '20px'}}>
       <p>
         {" "}
@@ -17,7 +20,7 @@ function Footer() {
         >
           ReactJs
         </a> 
-        {" "} by Epruso 2022.
+        {" "} by Epruso {year}.
       </p>{" "}
     </div>
   );

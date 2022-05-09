@@ -6,7 +6,8 @@ import "./Screen.css";
 
 function Screen() {
  
-  
+  const [token, setToken] = useState([0]);
+  const [sugges, setSugges] = useState([0]);
   const { addKey } = useContext(KeyContext);      
   const [Screen, setScreen] = useState("");
 
@@ -35,7 +36,7 @@ const keyDown = (e) => {
   
 }
  const speakRussian = () => {
-
+  
 // new SpeechSynthesisUtterance object
 let utter = new SpeechSynthesisUtterance();
 utter.lang = 'ru-RU';
@@ -49,14 +50,55 @@ utter.onend = function() {
 // speak
 window.speechSynthesis.speak(utter);
  }
+ const spell = () => {
+    let text = document.getElementById('screen').value;
+    const encodedParams = new URLSearchParams();
+    encodedParams.append("Text", text);
+
+const options = {
+	method: 'POST',
+	headers: {
+		'content-type': 'application/x-www-form-urlencoded',
+		'X-RapidAPI-Host': 'bing-spell-check2.p.rapidapi.com',
+		'X-RapidAPI-Key': 'c5588a863cmsh3c0b0b5ac819b2bp18c033jsn2e295f1bef86'
+	},
+	body: encodedParams
+};
+ let array1 = [];
+ let array2 = [];
+fetch('https://bing-spell-check2.p.rapidapi.com/spellcheck?mode=spell&mkt=ru-RU', options)
+	.then(response => response.json())
+	.then( (response) => {
+    response.flaggedTokens.forEach(token => {
+      //console.log(token.token);
+     // console.log(token.suggestions[0].suggestion);
+      array1.push(token.suggestions[0].suggestion);
+      array2.push(token.token);
+    })
+    setSugges(array1);
+    setToken(array2);
+    console.log(sugges);
+    }
+      )
+	.catch(err => console.error(err));
+    
+
+ }
 
     return (
 
  <>
  <button onClick={speakRussian}>Escuchar</button>
+ <button onClick={spell}>Sugerir correcciones</button>
+
 <FloatingLabel  className="mb-2" style={{ margin: "auto",width: "80%", paddingTop: '50px'}}>
     <Form.Control onKeyDown={(e)=> keyDown(e)} id='screen' as="textarea" placeholder="Leave a comment here"  style={{ height:"150px" }} autoFocus />
   </FloatingLabel>
+ <div id="suggestion">
+   <p>Sugerencias:</p>
+   <p><span className='mal'>{token[0]}</span> reemplazar por: <span id="bien" className='bien'>{sugges[0]}</span></p>
+   <p><span className='mal'>{token[1]}</span> reemplazar por: <span className='bien'>{sugges[1]}</span></p>
+ </div> 
   </>   
   
     )

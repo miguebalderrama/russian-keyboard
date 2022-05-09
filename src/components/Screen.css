@@ -8,3 +8,13 @@
   font-size: 1.1rem;  
   
 }
+.bien {
+  font-family: 'Poppins', sans-serif;
+  background-color: #5DECA5;
+  color:#fff
+}
+.mal{
+  font-family: 'Poppins', sans-serif;
+  background-color: #e64c3e;
+  color: #fff;
+}

@@ -52,8 +52,11 @@ window.speechSynthesis.speak(utter);
  }
  const spell = () => {
     let text = document.getElementById('screen').value;
+    
+    let nuevaStr = text.replace(",", "");
+    nuevaStr = nuevaStr.replace(".", "");
     const encodedParams = new URLSearchParams();
-    encodedParams.append("Text", text);
+    encodedParams.append("Text", nuevaStr);
 
 const options = {
 	method: 'POST',

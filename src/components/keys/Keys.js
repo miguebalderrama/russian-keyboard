@@ -29,9 +29,10 @@ function Keys() {
       }, [keys])
     
     const pushKey = (e) => {
-        
+        console.log(document.getElementById('screen').selectionStart);
         let key = e.target.innerText;
-        console.log(key.charCodeAt(0))       
+        console.log(key.charCodeAt(0))  
+           
         if(key === 'bloq mayus') {          
 
             console.log("Aprete el boton mayus");
@@ -55,7 +56,7 @@ function Keys() {
                  
         addKey(document.getElementById('screen').value+key);
         console.log(document.getElementById('screen').value+key);
-        document.getElementById('screen').focus();
+       // document.getElementById('screen').focus();
 
         
     }

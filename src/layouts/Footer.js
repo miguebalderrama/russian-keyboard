@@ -5,8 +5,8 @@ function Footer() {
   const year = currentTime.getFullYear();
   return (
    
-    <div style={{ fontSize : '13px' ,paddingTop: '20px'}}>
-      <p>
+    <div style={{ fontSize : '13px' ,paddingTop: '20px', color:"white", paddingBottom: '10px'}}>
+      <p style={{ margin : '0'}}>
         {" "}
         Hecho con
         <span role="img" aria-label="amor">

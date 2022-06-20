@@ -3,8 +3,10 @@
 .App {
   text-align: center;
   font-family: 'Poppins', sans-serif;  
-  
-  
+  background-image: url("https://s1.eestatic.com/2015/10/16/cultura/arte/pintura-vasili_kandinsky-arte_72002866_63658_1706x1280.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
   
 }
 .App h1{

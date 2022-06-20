@@ -5,7 +5,7 @@ import Screen from '../components/Screen';
 
 function KeyContainer() {
     return (
-        <Container style={{ backgroundColor: '#f5f5f5', padding:"0 70px" }}>  
+        <Container style={{ backgroundColor: '#f5f5f5', padding:"0 70px", maxWidth:"960px", marginTop:"10px", borderRadius:"10px" }}>  
           
         <Screen/>
         <Keys/>        

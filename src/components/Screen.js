@@ -3,6 +3,13 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { KeyContext } from '../context/KeyContext';
 import "./Screen.css";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
+import SpellcheckIcon from '@mui/icons-material/Spellcheck';
+import Chip from '@mui/material/Chip';
+
 
 function Screen() {
  
@@ -91,10 +98,15 @@ fetch('https://bing-spell-check2.p.rapidapi.com/spellcheck?mode=spell&mkt=ru-RU'
     return (
 
  <>
- <button onClick={speakRussian}>Escuchar</button>
- <button onClick={spell}>Sugerir correcciones</button>
+ <Container maxWidth="sm" >
+ <Stack  spacing={3} direction="row" justifyContent="center"  pt={2}>
+      
+      <Button onClick={speakRussian} variant="outlined" startIcon={<RecordVoiceOverIcon color="disabled" />}>Escuchar</Button>
+      <Button onClick={spell} variant="outlined" endIcon={<SpellcheckIcon color="success" />}>Corregir</Button>
+  </Stack>
+  </Container>
 
-<FloatingLabel  className="mb-2" style={{ margin: "auto",width: "80%", paddingTop: '50px'}}>
+<FloatingLabel  className="mb-2" style={{ margin: "auto",width: "95%", paddingTop: '20px'}}>
     <Form.Control onKeyDown={(e)=> keyDown(e)} id='screen' as="textarea" placeholder="Leave a comment here"  style={{ height:"150px" }} autoFocus />
   </FloatingLabel>
  <div id="suggestion">
